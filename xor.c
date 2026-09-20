@@ -47,10 +47,17 @@ void decryptFile(const char *filename, const char *key) {
     free(buffer);
 }
 
+void readInput(char* buffer, int size) {
+    if (fgets(buffer, size, stdin) != NULL) {
+        buffer[strcspn(buffer, "\n")] = '\0';
+    }
+}
+
 int main() {
-    char choice[5];
+    char choice[10];
     printf("Enter 'encrypt' or 'decrypt': ");
-    scanf("%s", choice);
+    //scanf("%s", choice);
+    readInput(choice, sizeof(choice));
 
     if (strcmp(choice, "encrypt") == 0) {
         char message[1024];
@@ -58,14 +65,15 @@ int main() {
         char key[100];
 
         printf("Enter the message to encrypt: ");
-        fgets(message, sizeof(message), stdin);
-        message[strcspn(message, "\n")] = '\0'; // Remove newline
+        readInput(message, sizeof(message));
 
         printf("Enter the filename to save encrypted data: ");
-        scanf("%s", filename);
+        //scanf("%s", filename);
+        readInput(filename, sizeof(filename));
 
         printf("Enter the encryption key: ");
-        scanf("%s", key);
+        //scanf("%s", key);
+        readInput(key, sizeof(key));
 
         encryptFile(filename, message, key);
     } else if (strcmp(choice, "decrypt") == 0) {
@@ -73,10 +81,10 @@ int main() {
         char key[100];
 
         printf("Enter the filename to decrypt: ");
-        scanf("%s", filename);
+        readInput(filename, sizeof(filename));
 
         printf("Enter the decryption key: ");
-        scanf("%s", key);
+        readInput(key, sizeof(key));
 
         decryptFile(filename, key);
     } else {

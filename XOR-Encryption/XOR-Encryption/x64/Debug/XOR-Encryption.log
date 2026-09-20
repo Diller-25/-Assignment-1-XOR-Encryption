@@ -1,0 +1,6 @@
+﻿  xor.c
+C:\Users\Student\source\repos\-Assignment-1-XOR-Encryption\xor.c(5,18): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\Student\source\repos\-Assignment-1-XOR-Encryption\xor.c(34,28): warning C4013: 'malloc' undefined; assuming extern returning int
+C:\Users\Student\source\repos\-Assignment-1-XOR-Encryption\xor.c(34,20): warning C4312: 'type cast': conversion from 'int' to 'char *' of greater size
+C:\Users\Student\source\repos\-Assignment-1-XOR-Encryption\xor.c(47,5): warning C4013: 'free' undefined; assuming extern returning int
+  XOR-Encryption.vcxproj -> C:\Users\Student\source\repos\-Assignment-1-XOR-Encryption\XOR-Encryption\x64\Debug\XOR-Encryption.exe
